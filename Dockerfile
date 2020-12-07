@@ -1,9 +1,7 @@
-FROM debian:jessie
+FROM alpine:3.12
 MAINTAINER Ilya Stepanov <dev@ilyastepanov.com>
 
-RUN apt-get update && \
-    apt-get install -y python python-pip cron && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --update --no-cache py-pip
 
 RUN pip install s3cmd
 
